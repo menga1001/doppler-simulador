@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Outfit', sans-serif;
+  margin: 0;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #1a1520, #2b2533, #3c2e4a);
+  color: #e8e0f0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Título elegante */
+h1 {
+  font-size: 3rem;
+  color: #c792ea;
+  text-shadow: 0 0 6px rgba(199, 146, 234, 0.4);
+  margin-bottom: 25px;
+}
+
+/* Contenedor de inputs */
+.inputs {
+  background: rgba(45, 38, 58, 0.95);
+  padding: 30px 40px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  max-width: 850px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+/* Etiquetas e inputs */
+.inputs label {
+  color: #d1bce3;
+  font-weight: 600;
+  min-width: 210px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+input[type="number"] {
+  width: 100px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 2px solid #322d3e;
+  background-color: #1d1725;
+  color: #f3eaff;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+input[type="number"]:focus {
+  border-color: #ab92df;
+  outline: none;
+  box-shadow: 0 0 8px #ab92df;
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+  transform: scale(1.2);
+  accent-color: #ab92df;
+}
+
+/* Botones pro en púrpura */
+button {
+  background: linear-gradient(145deg, #aa72e2, #7a4db5);
+  border: none;
+  border-radius: 12px;
+  padding: 12px 28px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #f8f6ff;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(171, 146, 223, 0.3);
+  transition: all 0.25s ease-in-out;
+  text-transform: uppercase;
+}
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(171, 146, 223, 0.5);
+}
+button:active {
+  transform: scale(0.95);
+}
+
+/* Canvas */
+#canvas {
+  border-radius: 15px;
+  background-color: #231b2e;
+  border: 2px solid #6e559c;
+  box-shadow: 0 0 15px rgba(171, 146, 223, 0.2);
+  width: 100%;
+  max-width: 900px;
+  height: 300px;
+  margin-bottom: 40px;
+}
+
+/* Texto resultado */
+p {
+  font-size: 1.3rem;
+  color: #c792ea;
+  margin-bottom: 18px;
+}
+
+/* Botón ayuda */
+#btnAyuda {
+  background: transparent;
+  border: 2px solid #ab92df;
+  color: #ab92df;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+#btnAyuda:hover {
+  background: #ab92df;
+  color: #1c1426;
+}
+
+/* Caja ayuda con animación */
+#cajaAyuda {
+  max-width: 850px;
+  margin: 0 auto 30px auto;
+  background: rgba(35, 29, 46, 0.95);
+  padding: 20px 30px;
+  border-radius: 14px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  text-align: left;
+  font-size: 1rem;
+  color: #e0d4f2;
+  line-height: 1.6;
+  user-select: text;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+#cajaAyuda.show {
+  max-height: 1800px;
+  opacity: 1;
+}

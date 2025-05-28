@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simulador Efecto Doppler</title>
+  <link rel="stylesheet" href="body.css" />
+</head>
+<body>
+  <h1>Simulador del Efecto Doppler</h1>
+
+  <div class="inputs">
+    <label>Frecuencia emitida (Hz): <input type="number" id="frecuencia" value="440"></label>
+    <label>Velocidad de la fuente (m/s): <input type="number" id="vFuente" value="10"></label>
+    <label>Velocidad del observador (m/s): <input type="number" id="vObs" value="0"></label>
+    <label><input type="checkbox" id="activarSonido" checked> Activar sonido</label>
+    <button onclick="calcular()">Calcular</button>
+    <button onclick="toggleSimulacion()">Iniciar / Pausar</button>
+  </div>
+
+  <p>Frecuencia percibida: <span id="resultado">---</span> Hz</p>
+<audio id="sonidoAmbulancia" src="ambulancia.mp3" preload="auto" loop></audio>
+
+
+  <canvas id="canvas" width="900" height="300"></canvas>
+<button id="btnAyuda">❓ Ayuda</button>
+
+<div id="cajaAyuda" class="oculto">
+ <h3>¿Para qué sirve este simulador?</h3>
+<p>Este simulador te permite experimentar con el <strong>efecto Doppler</strong>, un fenómeno que ocurre cuando una fuente de sonido se mueve respecto a un observador, cambiando la frecuencia percibida del sonido.</p>
+
+<h3>¿Cómo usarlo?</h3>
+<ul>
+  <li>Introduce la frecuencia emitida por la fuente en Hz (por ejemplo, 440 Hz corresponde a la nota La).</li>
+  <li>Ingresa la velocidad de la fuente sonora en metros por segundo (m/s). Usa valores positivos si la fuente se mueve hacia la derecha y negativos si se mueve hacia la izquierda.</li>
+  <li>Ingresa la velocidad del observador en m/s. Valores positivos si se mueve hacia la derecha y negativos si hacia la izquierda.</li>
+  <li>Marca o desmarca la opción "Activar sonido" para escuchar el tono con la frecuencia percibida.</li>
+  <li>Haz clic en "Calcular" para ver la frecuencia percibida y reiniciar la simulación.</li>
+  <li>Usa "Iniciar / Pausar" para comenzar o detener la animación y el sonido.</li>
+</ul>
+
+<h3>Ejemplos prácticos para probar:</h3>
+<ul>
+  <li><strong>Ambulancia acercándose:</strong> Frecuencia 440 Hz, velocidad fuente +30 m/s, velocidad observador 0. Escucharás la frecuencia aumentar al acercarse la fuente.</li>
+  <li><strong>Ambulancia alejándose:</strong> Frecuencia 440 Hz, velocidad fuente -30 m/s, velocidad observador 0. La frecuencia percibida disminuirá conforme la fuente se aleja.</li>
+  <li><strong>Observador en movimiento:</strong> Fuente estática (0 m/s), observador con velocidad negativa para acercarse a la fuente. La frecuencia percibida aumenta.</li>
+  <li><strong>Fuente y observador en movimiento:</strong> Fuente +20 m/s y observador -10 m/s (se acercan). El cambio en la frecuencia será más notable.</li>
+  <li><strong>Sin movimiento:</strong> Ambas velocidades en 0. La frecuencia percibida es igual a la emitida.</li>
+</ul>
+
+</div>
+
+  <script src="scrip.js"></script>
+</body>
+</html>
